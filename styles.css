@@ -489,3 +489,216 @@ svg {
     .gallery-section { padding-bottom: 64px; }
     .lb-nav { top: auto; bottom: 20px; transform: none; }
 }
+
+/* ==========================================================
+   Plomberie Chauffage MGF — page Contact
+   (à charger après styles.css, utilise ses variables :root)
+   ========================================================== */
+
+/* ---------- Titre de page ---------- */
+.page-hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
+        linear-gradient(180deg, var(--bg), var(--white));
+    padding: 70px 0 50px;
+    text-align: center;
+}
+.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
+.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 56ch; margin-inline: auto; }
+
+/* ---------- Mise en page ---------- */
+.contact-section { padding: 30px 0 90px; }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ---------- Formulaire ---------- */
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px 36px;
+    box-shadow: var(--shadow);
+}
+.form-card h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: .4em; }
+.form-intro { color: var(--muted); font-size: .97rem; margin-bottom: 1.8rem; }
+
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+.field label { font-weight: 600; font-size: .9rem; color: var(--navy); }
+.req { color: var(--accent); }
+
+.field input,
+.field textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: .8em 1em;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.field textarea { resize: vertical; min-height: 140px; }
+.field input:hover,
+.field textarea:hover { border-color: #c9d4df; }
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(21, 101, 192, .15);
+}
+
+.form-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    margin-top: 8px;
+}
+.req-note { margin: 0; font-size: .85rem; color: var(--muted); }
+
+/* ---------- Coordonnées ---------- */
+.contact-side { display: grid; gap: 24px; }
+
+.info-card {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 34px 30px;
+    box-shadow: var(--shadow);
+}
+.info-card h2 { color: var(--white); font-size: 1.3rem; font-weight: 800; margin-bottom: 1.4rem; }
+
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.contact-list li { display: flex; gap: 16px; align-items: flex-start; }
+.contact-list strong {
+    display: block;
+    font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(255, 255, 255, .6);
+    margin-bottom: 2px;
+}
+.contact-list address { font-style: normal; line-height: 1.5; }
+.contact-list a { font-weight: 600; transition: color .2s; word-break: break-word; }
+.contact-list a:hover { color: var(--accent); }
+
+.ci {
+    flex: none;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .1);
+    color: var(--accent);
+    display: grid; place-items: center;
+}
+.ci svg { width: 22px; height: 22px; }
+
+.map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 3;
+    background: var(--blue-soft);
+}
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+    .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    .page-hero { padding: 50px 0 36px; }
+    .contact-section { padding-bottom: 64px; }
+    .form-card { padding: 28px 20px; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .form-foot { flex-direction: column-reverse; align-items: stretch; }
+    .form-foot .btn { justify-content: center; }
+}
+
+/* ==========================================================
+   Plomberie Chauffage MGF — page Liens
+   (à charger après styles.css, utilise ses variables :root)
+   ========================================================== */
+
+/* ---------- Titre de page ---------- */
+.page-hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
+        linear-gradient(180deg, var(--bg), var(--white));
+    padding: 70px 0 50px;
+    text-align: center;
+}
+.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
+.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 58ch; margin-inline: auto; }
+
+/* ---------- Liste de liens ---------- */
+.links-section { padding: 30px 0 90px; }
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: transparent;
+}
+
+.link-icon {
+    flex: none;
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: grid; place-items: center;
+    transition: background .25s, color .25s;
+}
+.link-icon { position: relative; overflow: hidden; }
+.link-icon svg { width: 26px; height: 26px; }
+/* Logo du site : recouvre l'icône générique (qui reste visible si l'image ne charge pas) */
+.link-icon img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 9px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: inherit;
+}
+.link-card:hover .link-icon { background: var(--blue); color: var(--white); }
+
+.link-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.link-body strong { color: var(--navy); font-size: 1.02rem; line-height: 1.3; }
+.link-body small { color: var(--muted); font-size: .85rem; }
+
+.arrow {
+    flex: none;
+    width: 22px; height: 22px;
+    color: var(--muted);
+    transition: color .25s, transform .25s;
+}
+.link-card:hover .arrow { color: var(--accent); transform: translate(3px, -3px); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+    .links-grid { grid-template-columns: 1fr; }
+    .page-hero { padding: 50px 0 36px; }
+    .links-section { padding-bottom: 64px; }
+}
