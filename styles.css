@@ -1,7 +1,30 @@
 /* ==========================================================
-   Plomberie Chauffage MGF — page Services
+   Plomberie Chauffage MGF — feuille de style commune
+   Pages : Accueil, Services, Réalisations, Contact, Liens
+
+   Sommaire
+   1.  Variables et base
+   2.  Boutons et étiquettes
+   3.  En-tête et menu
+   4.  Hero (Accueil, Services)
+   5.  Titres de page (Réalisations, Contact, Liens)
+   6.  Cartes de services
+   7.  Bandeau d'urgence
+   8.  Rappel RBQ et témoignage
+   9.  Appel à l'action
+   10. Pied de page
+   11. Page Réalisations
+   12. Page Contact
+   13. Page Liens
+   14. Page d'accueil (avis, partenaires, formulaire, pied de page détaillé)
+   15. Responsive
+   16. Accessibilité
    ========================================================== */
 
+
+/* ==========================================================
+   1. Variables et base
+   ========================================================== */
 :root {
     --navy: #0b2a4a;
     --blue: #1565c0;
@@ -52,7 +75,14 @@ svg {
     stroke-linejoin: round;
 }
 
-/* ---------- Boutons ---------- */
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.section-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; }
+.section-head p { color: var(--muted); font-size: 1.05rem; }
+
+
+/* ==========================================================
+   2. Boutons et étiquettes
+   ========================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -93,7 +123,10 @@ svg {
     margin-bottom: 1.2rem;
 }
 
-/* ---------- En-tête ---------- */
+
+/* ==========================================================
+   3. En-tête et menu
+   ========================================================== */
 .site-header {
     position: sticky;
     top: 0;
@@ -122,7 +155,14 @@ svg {
     letter-spacing: .02em;
 }
 .logo-text { font-weight: 800; color: var(--navy); line-height: 1.1; }
-.logo-text small { display: block; font-weight: 500; font-size: .75rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.logo-text small {
+    display: block;
+    font-weight: 500;
+    font-size: .75rem;
+    color: var(--muted);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
 
 .nav { display: flex; align-items: center; gap: 1.8rem; }
 .nav a:not(.btn) { font-weight: 500; color: var(--muted); position: relative; padding: .3em 0; transition: color .2s; }
@@ -135,10 +175,14 @@ svg {
 }
 .nav-cta { padding: .6em 1.2em; font-size: .9rem; }
 
+/* Menu mobile (case à cocher, sans JavaScript) : affiché dans la section Responsive */
 .menu-toggle { display: none; }
 .burger { display: none; }
 
-/* ---------- Hero ---------- */
+
+/* ==========================================================
+   4. Hero (Accueil, Services)
+   ========================================================== */
 .hero {
     background:
         radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
@@ -200,12 +244,25 @@ svg {
 .float-top { top: 8%; left: -6%; }
 .float-bottom { bottom: 8%; right: -4%; }
 
-/* ---------- Services ---------- */
-.services { padding: 90px 0; background: var(--white); }
 
-.section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
-.section-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; }
-.section-head p { color: var(--muted); font-size: 1.05rem; }
+/* ==========================================================
+   5. Titres de page (Réalisations, Contact, Liens)
+   ========================================================== */
+.page-hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
+        linear-gradient(180deg, var(--bg), var(--white));
+    padding: 70px 0 50px;
+    text-align: center;
+}
+.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
+.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 58ch; margin-inline: auto; }
+
+
+/* ==========================================================
+   6. Cartes de services
+   ========================================================== */
+.services { padding: 90px 0; background: var(--white); }
 
 .grid {
     display: grid;
@@ -249,7 +306,10 @@ svg {
 
 .more { text-align: center; margin-top: 52px; }
 
-/* ---------- Bandeau urgence ---------- */
+
+/* ==========================================================
+   7. Bandeau d'urgence
+   ========================================================== */
 .emergency {
     background: linear-gradient(120deg, var(--navy), var(--blue));
     color: var(--white);
@@ -262,7 +322,10 @@ svg {
 .emergency h2 { color: var(--white); font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: .2em; }
 .emergency p { margin: 0; opacity: .85; }
 
-/* ---------- Info RBQ + témoignage ---------- */
+
+/* ==========================================================
+   8. Rappel RBQ et témoignage
+   ========================================================== */
 .info { padding: 90px 0; background: var(--bg); }
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
 
@@ -294,13 +357,19 @@ svg {
 .testimonial figcaption { font-weight: 700; opacity: .8; }
 .testimonial figcaption::before { content: "— "; }
 
-/* ---------- Appel à l'action ---------- */
+
+/* ==========================================================
+   9. Appel à l'action
+   ========================================================== */
 .cta { padding: 90px 0; text-align: center; background: var(--white); }
 .cta-inner { max-width: 640px; }
 .cta h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; }
 .cta p { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.8rem; }
 
-/* ---------- Pied de page ---------- */
+
+/* ==========================================================
+   10. Pied de page
+   ========================================================== */
 .site-footer { background: var(--navy); color: rgba(255, 255, 255, .8); padding: 60px 0 0; }
 .footer-inner {
     display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;
@@ -315,75 +384,20 @@ svg {
 .footer-nav a { transition: color .2s; }
 .footer-nav a:hover { color: var(--accent); }
 
-.footer-bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding: 20px 0; font-size: .85rem; }
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding: 20px 0;
+    font-size: .85rem;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 6px 20px;
+}
 .footer-bottom p { margin: 0; opacity: .7; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 50px; }
-    .hero-visual { max-width: 420px; margin-inline: auto; width: 100%; }
-    .float-top { left: -2%; }
-    .float-bottom { right: -2%; }
-    .grid { grid-template-columns: repeat(2, 1fr); }
-    .info-grid { grid-template-columns: 1fr; }
-}
 
-@media (max-width: 760px) {
-    .burger {
-        display: flex; flex-direction: column; justify-content: center; gap: 5px;
-        width: 42px; height: 42px; cursor: pointer; padding: 10px;
-    }
-    .burger span, .burger span::before, .burger span::after {
-        display: block; height: 2px; width: 100%;
-        background: var(--navy); border-radius: 2px; position: relative;
-        transition: transform .25s, opacity .25s;
-    }
-    .burger span::before, .burger span::after { content: ""; position: absolute; left: 0; }
-    .burger span::before { top: -7px; }
-    .burger span::after { top: 7px; }
-
-    .nav {
-        position: absolute; top: 72px; left: 0; right: 0;
-        flex-direction: column; align-items: stretch; gap: 0;
-        background: var(--white);
-        border-bottom: 1px solid var(--line);
-        max-height: 0; overflow: hidden;
-        transition: max-height .3s ease;
-    }
-    .nav a:not(.btn) { padding: 16px 20px; border-top: 1px solid var(--line); }
-    .nav a.active::after { display: none; }
-    .nav-cta { margin: 16px 20px; justify-content: center; }
-    .menu-toggle:checked ~ .nav { max-height: 460px; }
-
-    .hero { padding: 50px 0 60px; }
-    .services, .info, .cta { padding: 64px 0; }
-    .grid { grid-template-columns: 1fr; }
-    .emergency-inner { flex-direction: column; align-items: flex-start; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; scroll-behavior: auto !important; }
-}
-
-/* ============================================================
-   Plomberie Chauffage MGF — page Réalisations
-   (à charger après styles.css, utilise ses variables :root)
+/* ==========================================================
+   11. Page Réalisations
    ========================================================== */
-
-/* ---------- Titre de page ---------- */
-.page-hero {
-    background:
-        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
-        linear-gradient(180deg, var(--bg), var(--white));
-    padding: 70px 0 50px;
-    text-align: center;
-}
-.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
-.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 54ch; margin-inline: auto; }
-
-/* ---------- Galerie ---------- */
 .gallery-section { padding: 40px 0 30px; }
-.gallery-section:last-of-type { padding-bottom: 90px; }
 
 .gallery-head {
     display: flex; align-items: baseline; justify-content: space-between;
@@ -392,6 +406,8 @@ svg {
 }
 .gallery-head h2 { margin: 0; font-size: 1.6rem; font-weight: 800; }
 .gallery-head .count { color: var(--muted); font-size: .9rem; font-weight: 500; }
+
+.gallery-desc { color: var(--muted); max-width: 70ch; margin: -10px 0 24px; }
 
 .gallery {
     display: grid;
@@ -426,9 +442,10 @@ svg {
     color: var(--white);
 }
 .zoom svg { width: 38px; height: 38px; stroke-width: 1.6; }
-.thumb:hover .zoom, .thumb:focus-visible .zoom { opacity: 1; }
+.thumb:hover .zoom,
+.thumb:focus-visible .zoom { opacity: 1; }
 
-/* ---------- Emplacements en attente de photos ---------- */
+/* Emplacements en attente de photos */
 .thumb.placeholder {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 10px;
@@ -441,7 +458,7 @@ svg {
 .thumb.placeholder svg { width: 40px; height: 40px; color: var(--blue); opacity: .6; }
 .thumb.placeholder:hover { transform: none; box-shadow: none; }
 
-/* ---------- Agrandissement (CSS seulement, via :target) ---------- */
+/* Agrandissement des photos (CSS seulement, via :target) */
 .lightbox {
     position: fixed; inset: 0; z-index: 100;
     display: none;
@@ -479,34 +496,10 @@ svg {
 .lb-prev { left: 20px; }
 .lb-next { right: 20px; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-    .gallery { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-    .gallery { grid-template-columns: 1fr; }
-    .page-hero { padding: 50px 0 36px; }
-    .gallery-section { padding-bottom: 64px; }
-    .lb-nav { top: auto; bottom: 20px; transform: none; }
-}
 
 /* ==========================================================
-   Plomberie Chauffage MGF — page Contact
-   (à charger après styles.css, utilise ses variables :root)
+   12. Page Contact
    ========================================================== */
-
-/* ---------- Titre de page ---------- */
-.page-hero {
-    background:
-        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
-        linear-gradient(180deg, var(--bg), var(--white));
-    padding: 70px 0 50px;
-    text-align: center;
-}
-.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
-.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 56ch; margin-inline: auto; }
-
-/* ---------- Mise en page ---------- */
 .contact-section { padding: 30px 0 90px; }
 
 .contact-grid {
@@ -516,7 +509,7 @@ svg {
     align-items: start;
 }
 
-/* ---------- Formulaire ---------- */
+/* Formulaire */
 .form-card {
     background: var(--white);
     border: 1px solid var(--line);
@@ -563,7 +556,7 @@ svg {
 }
 .req-note { margin: 0; font-size: .85rem; color: var(--muted); }
 
-/* ---------- Coordonnées ---------- */
+/* Coordonnées et carte */
 .contact-side { display: grid; gap: 24px; }
 
 .info-card {
@@ -607,36 +600,10 @@ svg {
 }
 .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-    .contact-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-    .page-hero { padding: 50px 0 36px; }
-    .contact-section { padding-bottom: 64px; }
-    .form-card { padding: 28px 20px; }
-    .field-row { grid-template-columns: 1fr; gap: 0; }
-    .form-foot { flex-direction: column-reverse; align-items: stretch; }
-    .form-foot .btn { justify-content: center; }
-}
 
 /* ==========================================================
-   Plomberie Chauffage MGF — page Liens
-   (à charger après styles.css, utilise ses variables :root)
+   13. Page Liens
    ========================================================== */
-
-/* ---------- Titre de page ---------- */
-.page-hero {
-    background:
-        radial-gradient(circle at 85% 20%, rgba(21, 101, 192, .12), transparent 45%),
-        linear-gradient(180deg, var(--bg), var(--white));
-    padding: 70px 0 50px;
-    text-align: center;
-}
-.page-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: var(--blue); }
-.page-hero p { color: var(--muted); font-size: 1.1rem; max-width: 58ch; margin-inline: auto; }
-
-/* ---------- Liste de liens ---------- */
 .links-section { padding: 30px 0 90px; }
 
 .links-grid {
@@ -663,6 +630,8 @@ svg {
 
 .link-icon {
     flex: none;
+    position: relative;
+    overflow: hidden;
     width: 52px; height: 52px;
     border-radius: 14px;
     background: var(--blue-soft);
@@ -670,7 +639,6 @@ svg {
     display: grid; place-items: center;
     transition: background .25s, color .25s;
 }
-.link-icon { position: relative; overflow: hidden; }
 .link-icon svg { width: 26px; height: 26px; }
 /* Logo du site : recouvre l'icône générique (qui reste visible si l'image ne charge pas) */
 .link-icon img {
@@ -696,9 +664,151 @@ svg {
 }
 .link-card:hover .arrow { color: var(--accent); transform: translate(3px, -3px); }
 
-/* ---------- Responsive ---------- */
+
+/* ==========================================================
+   14. Page d'accueil
+   ========================================================== */
+
+/* Rappel RBQ : version plus compacte */
+.info--compact { padding: 60px 0; }
+
+/* Avis clients */
+.avis { padding: 80px 0; background: var(--white); }
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* Formulaire d'estimation (réutilise .field de la page Contact) */
+.estimate-form {
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.estimate-form .field { margin-bottom: 0; }
+.btn-block { justify-content: center; width: 100%; }
+
+/* Partenaires et accréditations */
+.partners {
+    padding: 50px 0;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+}
+.partners .section-head { margin-bottom: 30px; }
+.partners .section-head h3 { font-size: 1.5rem; margin: 0; }
+.partners-logos {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 40px;
+    filter: grayscale(20%);
+    opacity: .9;
+}
+.partners-logos img { max-height: 60px; object-fit: contain; }
+
+/* Pied de page détaillé (4 colonnes) */
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.footer-name { font-weight: 800; font-size: 1.3rem; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+.footer-name span { color: var(--accent); }
+.footer-name small {
+    display: block;
+    margin-top: 4px;
+    font-weight: 500; font-size: .75rem;
+    color: rgba(255, 255, 255, .6);
+    letter-spacing: .08em; text-transform: uppercase;
+}
+.footer-col h4 { color: var(--white); font-size: 1.1rem; margin: 0 0 16px; }
+.footer-col p { font-size: .9rem; line-height: 1.6; color: rgba(255, 255, 255, .7); }
+.footer-col .footer-hours { font-size: .95rem; color: rgba(255, 255, 255, .8); margin-bottom: 12px; }
+.footer-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 10px;
+    font-size: .95rem;
+    color: rgba(255, 255, 255, .8);
+}
+.footer-list a { transition: color .2s; }
+.footer-list a:hover { color: var(--accent); }
+.footer-call { width: 100%; justify-content: center; font-size: .9rem; padding: .7em 1em; }
+
+
+/* ==========================================================
+   15. Responsive
+   ========================================================== */
+
+/* Tablette */
+@media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+    .hero-visual { max-width: 420px; margin-inline: auto; width: 100%; }
+    .float-top { left: -2%; }
+    .float-bottom { right: -2%; }
+
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .info-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Téléphone (menu hamburger) */
 @media (max-width: 760px) {
-    .links-grid { grid-template-columns: 1fr; }
+    .burger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 42px; height: 42px; cursor: pointer; padding: 10px;
+    }
+    .burger span, .burger span::before, .burger span::after {
+        display: block; height: 2px; width: 100%;
+        background: var(--navy); border-radius: 2px; position: relative;
+        transition: transform .25s, opacity .25s;
+    }
+    .burger span::before, .burger span::after { content: ""; position: absolute; left: 0; }
+    .burger span::before { top: -7px; }
+    .burger span::after { top: 7px; }
+
+    .nav {
+        position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+        max-height: 0; overflow: hidden;
+        transition: max-height .3s ease;
+    }
+    .nav a:not(.btn) { padding: 16px 20px; border-top: 1px solid var(--line); }
+    .nav a.active::after { display: none; }
+    .nav-cta { margin: 16px 20px; justify-content: center; }
+    .menu-toggle:checked ~ .nav { max-height: 460px; }
+
+    .hero { padding: 50px 0 60px; }
     .page-hero { padding: 50px 0 36px; }
-    .links-section { padding-bottom: 64px; }
+    .services, .info, .cta { padding: 64px 0; }
+    .info--compact { padding: 48px 0; }
+    .avis { padding: 56px 0; }
+    .contact-section, .links-section { padding-bottom: 64px; }
+
+    .grid { grid-template-columns: 1fr; }
+    .links-grid { grid-template-columns: 1fr; }
+    .emergency-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Petit téléphone */
+@media (max-width: 560px) {
+    .gallery { grid-template-columns: 1fr; }
+    .lb-nav { top: auto; bottom: 20px; transform: none; }
+
+    .form-card { padding: 28px 20px; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .form-foot { flex-direction: column-reverse; align-items: stretch; }
+    .form-foot .btn { justify-content: center; }
+}
+
+
+/* ==========================================================
+   16. Accessibilité
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
 }
